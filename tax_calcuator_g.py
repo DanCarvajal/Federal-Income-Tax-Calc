@@ -1,21 +1,21 @@
-ncome = float(input("How much did you make last year? "))
+income = float(input("How much did you make last year? "))
 agi = income - 10300
 owe = 0
-brackets = [0,9225,37450,65000]
-rates = [0,0.1,0.15,0.25]
-n=1
-lim = len(brackets)
+brackets = [0, 9225, 37450, 65000]
+rates = [0, 0.1, 0.15, 0.25]
+n = 1
+lim = len(brackets) - 1
 
 while True:
    if agi < brackets[n]:
-       owe += (agi-brackets[n-1]) * rates[n]
+       owe += (agi - brackets[n - 1]) * rates[n]
        break
    else:
-       owe += brackets[n]*rates[n]
-   n=n+1
+       owe += brackets[n] * rates[n]
+   n = n + 1
    
-   if n==lim-1:
-       owe += (agi-brackets[n-1]) * rates[n]
+   if n == lim:
+       owe += (agi - brackets[n - 1]) * rates[n]
        break
 
 print(owe)
